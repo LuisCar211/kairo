@@ -1,0 +1,22 @@
+# Netlify
+.netlify/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+.env.local
+
+# Caché
+.cache/
+.npm
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Página no encontrada — KAIRO</title>
+  <link rel="stylesheet" href="/styles.css"/>
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      background: var(--cream);
+    }
+    .error-inner { max-width: 520px; }
+    .error-code {
+      font-family: var(--font-h);
+      font-size: clamp(5rem, 15vw, 9rem);
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: .15;
+    }
+    .error-title  { margin-bottom: 16px; }
+    .error-desc   { color: var(--txt-soft); margin-bottom: 36px; line-height: 1.85; }
+    .error-logo   { margin: 0 auto 40px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar mínima -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <div class="logo-mark">K</div>
+        <span class="logo-text">KAIRO</span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="error-page">
+    <div class="error-inner">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Página no encontrada</h1>
+      <p class="error-desc">
+        La página que buscas no existe o fue movida.<br>
+        Verifica la URL o regresa al inicio.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="/index.html"    class="btn btn-red">← Ir al inicio</a>
+        <a href="/contacto.html" class="btn btn-outline">Contactar soporte</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>

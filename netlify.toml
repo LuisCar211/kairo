@@ -1,0 +1,38 @@
+# netlify.toml
+# Configuración principal de Netlify (equivale a firebase.json)
+
+[build]
+  # Sitio estático puro: no hay comando de build
+  publish = "."
+
+# Redireccionamiento 404 personalizado
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404
+
+# Cabeceras de caché (equivale a los "headers" de firebase.json)
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "max-age=31536000"

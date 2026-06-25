@@ -1,0 +1,40 @@
+# Deploy de preview al abrir un Pull Request
+name: Deploy Preview to Netlify on PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents:      read
+  pull-requests: write
+
+jobs:
+  preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Deploy preview a Netlify
+        id: netlify_preview
+        uses: netlify/actions/cli@master
+        with:
+          # Sin --prod genera una URL de preview única por PR
+          args: deploy --dir=. --alias=pr-${{ github.event.pull_request.number }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID:    ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Comentar URL de preview en el PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner:        context.repo.owner,
+              repo:         context.repo.repo,
+              body:         '✅ **Preview desplegado en Netlify:**\nhttps://pr-${{ github.event.pull_request.number }}--TU_SITE_NAME.netlify.app'
+            })

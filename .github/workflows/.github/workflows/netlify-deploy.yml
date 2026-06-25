@@ -1,0 +1,22 @@
+# Deploy a Netlify al hacer push a main
+name: Deploy to Netlify on merge
+
+on:
+  push:
+    branches:
+      - main          # ← antes era "." (error en el original), corrígelo aquí también
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Deploy a Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=. --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID:    ${{ secrets.NETLIFY_SITE_ID }}

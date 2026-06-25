@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contacto — KAIRO</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+  <!-- FAQ inline styles for this page -->
+  <style>
+    .faq-list { display:flex; flex-direction:column; gap:8px; }
+    .faq-item { background:var(--surface); border:1.5px solid var(--cream-dkr); border-radius:12px; overflow:hidden; }
+    .faq-item.open { border-color:var(--red); }
+    .faq-q { width:100%; display:flex; justify-content:space-between; align-items:center; padding:16px 20px; font-family:var(--font-h); font-size:.88rem; font-weight:700; color:var(--txt-base); text-align:left; transition:color .2s; }
+    .faq-q:hover { color:var(--red); }
+    .faq-arrow { color:var(--red); transition:transform .3s; }
+    .faq-item.open .faq-arrow { transform:rotate(180deg); }
+    .faq-a { display:none; padding:0 20px 16px; }
+    .faq-a p { color:var(--txt-soft); font-size:.88rem; line-height:1.8; }
+    .faq-a { display:none; padding:0 20px 16px; } /* ← ya existe */
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">
+      <div class="logo-mark">K</div>
+      <span class="logo-text">KAIRO</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html"                  class="nav-link">Inicio</a></li>
+      <li><a href="software.html"               class="nav-link">Software</a></li>
+      <li><a href="automatizacion.html"          class="nav-link">Automatización</a></li>
+      <li><a href="crm.html"                    class="nav-link">CRM</a></li>
+      <li><a href="inteligencia-artificial.html" class="nav-link">IA</a></li>
+      <li><a href="bases-de-datos.html"         class="nav-link">Bases de Datos</a></li>
+      <li><a href="marketing.html"              class="nav-link">Marketing</a></li>
+      <li><a href="contacto.html"               class="nav-link active">Contacto</a></li>
+    </ul>
+    <a href="#form" class="btn btn-red nav-cta">Ir al formulario</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO CONTACTO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="/index.html">Inicio</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Contacto</span>
+      </div>
+      <span class="sec-label">Hablemos</span>
+      <h1>Construyamos algo <span>increíble</span> juntos</h1>
+      <p>Ya seas una startup o una empresa establecida, estamos listos para diseñar la solución tecnológica que llevará tu negocio al siguiente nivel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO COMPLETO -->
+<section class="contact-sec" id="form" style="padding-top:60px;">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <span class="sec-label">Información de Contacto</span>
+        <h2>Estamos aquí para <span class="text-red">ayudarte</span></h2>
+        <p>Cuéntanos tu proyecto o desafío y te responderemos con una propuesta personalizada en menos de 24 horas.</p>
+        <div class="cinfo-items">
+          <div class="cinfo-row">
+            <div class="cinfo-icon">✉</div>
+            <div><strong>Email</strong><span>lcaygua@gmail.com</span></div>
+          </div>
+          <div class="cinfo-row">
+            <div class="cinfo-icon">📍</div>
+            <div><strong>Ubicación</strong><span>Puebla, Puebla</span></div>
+          </div>
+          <div class="cinfo-row">
+            <div class="cinfo-icon">☎</div>
+            <div><strong>Teléfono</strong><span>+52 221 389 1640</span></div>
+          </div>
+          <div class="cinfo-row">
+            <div class="cinfo-icon">💬</div>
+            <div><strong>WhatsApp</strong><span>+52 221 389 1640</span></div>
+          </div>
+          <div class="cinfo-row">
+            <div class="cinfo-icon">🕐</div>
+            <div><strong>Horario</strong><span>Lun – Vie, 9:00 – 18:00 (GMT-6)</span></div>
+          </div>
+        </div>
+
+        <!-- FAQ mini -->
+        <div style="margin-top:40px;">
+          <h3 style="margin-bottom:20px;">Preguntas frecuentes</h3>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda un proyecto? <span class="faq-arrow">▾</span></button>
+              <div class="faq-a"><p>Depende del alcance. Proyectos simples en 2-4 semanas, proyectos complejos en 2-6 meses. Siempre definimos plazos claros antes de iniciar.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">¿Trabajan con empresas sin equipo técnico? <span class="faq-arrow">▾</span></button>
+              <div class="faq-a"><p>Sí, es nuestro perfil ideal. KAIRO actúa como tu equipo tecnológico externo desde la estrategia hasta el soporte.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">¿Tienen soporte después del lanzamiento? <span class="faq-arrow">▾</span></button>
+              <div class="faq-a"><p>Sí. Ofrecemos planes de mantenimiento y soporte continuo para mantener todo funcionando perfectamente.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO COMPLETO -->
+      <!-- FORMULARIO COMPLETO -->
+<div class="form-card">
+  <h3>Nueva Consulta de Proyecto</h3>
+
+  <div class="form-success" id="formSuccess" style="display:none;">
+    <div class="success-icon">✓</div>
+    <p>¡Recibimos tu mensaje! Te responderemos en menos de 24 horas.</p>
+  </div>
+
+  <!-- ✅ Agrega: action, method, netlify, name -->
+  <form 
+    id="contactForm"
+    name="consultas-kairo"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    onsubmit="handleSubmit(event)"
+  >
+    <!-- ✅ Campo oculto anti-spam -->
+    <input type="hidden" name="form-name" value="consultas-kairo"/>
+    <p style="display:none;"><input name="bot-field"/></p>
+
+    <div class="form-row-2">
+      <div class="form-grp">
+        <label>Nombre completo *</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required/>
+      </div>
+      <div class="form-grp">
+        <label>Correo electrónico *</label>
+        <input type="email" id="email" name="email" placeholder="juan@empresa.com" required/>
+      </div>
+    </div>
+    <div class="form-row-2">
+      <div class="form-grp">
+        <label>Empresa *</label>
+        <input type="text" id="empresa" name="empresa" placeholder="Mi Empresa S.A." required/>
+      </div>
+      <div class="form-grp">
+        <label>Teléfono</label>
+        <input type="tel" name="telefono" placeholder="+52 221 389 1640"/>
+      </div>
+    </div>
+    <div class="form-grp">
+      <label>Servicio de interés</label>
+      <select name="servicio">
+        <option value="">Seleccionar servicio…</option>
+        <option>Desarrollo de Software a Medida</option>
+        <option>Automatización de Procesos</option>
+        <option>CRM Empresarial</option>
+        <option>Inteligencia Artificial</option>
+        <option>Bases de Datos y Analítica</option>
+        <option>Marketing Tecnológico</option>
+        <option>Varios servicios</option>
+      </select>
+    </div>
+    <div class="form-grp">
+      <label>Presupuesto estimado</label>
+      <select name="presupuesto">
+        <option value="">Seleccionar rango…</option>
+        <option>Menos de $5,000 USD</option>
+        <option>$5,000 – $15,000 USD</option>
+        <option>$15,000 – $50,000 USD</option>
+        <option>$50,000 USD o más</option>
+        <option>No lo sé aún</option>
+      </select>
+    </div>
+    <div class="form-grp">
+      <label>Descripción del proyecto *</label>
+      <textarea id="mensaje" name="mensaje" rows="5" 
+        placeholder="Cuéntanos sobre tu empresa…" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-red btn-full" id="submitBtn" style="padding:15px;">
+      ENVIAR CONSULTA →
+    </button>
+    <p style="font-size:.78rem;color:var(--txt-muted);text-align:center;margin-top:12px;">
+      Te responderemos en menos de 24 horas hábiles.
+    </p>
+  </form>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <div class="logo-mark">K</div>
+          <span class="logo-text">KAIRO</span>
+        </a>
+        <p>Soluciones tecnológicas inteligentes para empresas modernas que quieren crecer.</p>
+        <div class="footer-social">
+          <a href="#">𝕏</a><a href="#">in</a><a href="#">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="software.html">Software a Medida</a></li>
+          <li><a href="automatizacion.html">Automatización</a></li>
+          <li><a href="crm.html">CRM Empresarial</a></li>
+          <li><a href="inteligencia-artificial.html">Inteligencia Artificial</a></li>
+          <li><a href="bases-de-datos.html">Bases de Datos</a></li>
+          <li><a href="marketing.html">Marketing Tecnológico</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto directo</h5>
+        <ul>
+          <li>✉ lcaygua@gmail.com</li>
+          <li>📍 Puebla, Pue.</li>
+          <li>☎ +52 222 123 4567</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 KAIRO Technologies. Todos los derechos reservados.</span>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
